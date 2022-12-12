@@ -5,11 +5,10 @@ from selenium.webdriver.support.wait import WebDriverWait
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import Chrome
 
-from login_page import Login_page
+from login_page import LoginPage
 
 
-class Test_2():
-
+class Test1:
     def test_select_product(self):
         driver = Chrome(executable_path=ChromeDriverManager().install())
         base_url = 'https://www.saucedemo.com'
@@ -19,7 +18,7 @@ class Test_2():
         password = 'secret_sauce'
 
         print('Start Test')
-        login = Login_page(driver)
+        login = LoginPage(driver)
         login.autorization(user_name=login_problem_user, login_password=password)
 
         select_product = WebDriverWait(driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH,'//button[@id="add-to-cart-sauce-labs-backpack"]')))
@@ -38,5 +37,5 @@ class Test_2():
         print('Test success')
 
 
-test_2 =Test_2()
+test_2 =Test1()
 test_2.test_select_product()
