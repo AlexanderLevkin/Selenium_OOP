@@ -8,7 +8,7 @@ from selenium.webdriver import Chrome
 from login_page import LoginPage
 
 
-class Test1():
+class Test1:
 
     def test_select_product(self):
         driver = Chrome(executable_path=ChromeDriverManager().install())
