@@ -1,7 +1,12 @@
+import time
+
+from selenium.common import TimeoutException
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.wait import WebDriverWait
-import time
+from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver import Chrome
 
 
 class LoginPage:

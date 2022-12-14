@@ -18,7 +18,7 @@ class USER:
         base_url = 'https://www.saucedemo.com'
         driver.get(base_url)
         driver.maximize_window()
-        print('Start Test User_3')
+        print('Start Test User')
         # Authorization on site
         username_field = WebDriverWait(driver, 30).until(
             EC.element_to_be_clickable((By.XPATH, '//input[@id="user-name"]')))

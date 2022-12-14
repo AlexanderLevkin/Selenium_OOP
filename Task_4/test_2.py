@@ -12,9 +12,10 @@ from login_page import LoginPage
 from Credentials import credentials
 
 
+
 class User1:
     def test_select_product(self):
-        driver = Chrome(service=Service(ChromeDriverManager().install()))
+        driver = Chrome(service=Service( ChromeDriverManager().install()))
         base_url = 'https://www.saucedemo.com'
         driver.get(base_url)
         driver.maximize_window()
@@ -29,18 +30,16 @@ class User1:
         assert check_pars == "PRODUCTS"
 
         select_burger_menu = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//*[@id='react-burger-menu-btn']")))
+            EC.element_to_be_clickable((By.XPATH,"//*[@id='react-burger-menu-btn']")))
         select_burger_menu.click()
         time.sleep(2)
         click_to_the_logout_button = WebDriverWait(driver, 30).until(
-            EC.element_to_be_clickable((By.XPATH, "//*[@id='logout_sidebar_link']")))
+            EC.element_to_be_clickable((By.XPATH,"//*[@id='logout_sidebar_link']")))
         click_to_the_logout_button.click()
         print('Logout')
 
-
 test_1 = User1()
 test_1.test_select_product()
-
 
 class User2:
     def test_select_product(self):
@@ -60,10 +59,8 @@ class User2:
         print("Skip this USER")
         driver.refresh()
 
-
 test_2 = User2()
 test_2.test_select_product()
-
 
 class User3:
     def test_select_product(self):
@@ -90,10 +87,8 @@ class User3:
         click_to_the_logout_button.click()
         print('Logout')
 
-
 test_3 = User3()
 test_3.test_select_product()
-
 
 class User4:
     def test_select_product(self):
@@ -120,18 +115,20 @@ class User4:
         click_to_the_logout_button.click()
         print('Logout')
 
-
 test_4 = User4()
 test_4.test_select_product()
 
-#
-# select_shoping_cart = WebDriverWait(driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@id="shopping_cart_container"]')))
-# select_shoping_cart.click()
-# print('Click enter shopping cart')
-# time.sleep(2)
-#
-# success_test = WebDriverWait(driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH,'//span[@class="title"]')))
-# success_test = success_test.text
-# print(success_test)
-# assert success_test == "YOUR CART"
-# print('Test success')
+
+
+
+        #
+        # select_shoping_cart = WebDriverWait(driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH,'//div[@id="shopping_cart_container"]')))
+        # select_shoping_cart.click()
+        # print('Click enter shopping cart')
+        # time.sleep(2)
+        #
+        # success_test = WebDriverWait(driver, 30).until(expected_conditions.element_to_be_clickable((By.XPATH,'//span[@class="title"]')))
+        # success_test = success_test.text
+        # print(success_test)
+        # assert success_test == "YOUR CART"
+        # print('Test success')
